@@ -11,12 +11,15 @@ const EventCard: React.FC<EventCardProps> = ({ image, title, items, color = "#8B
   return (
     <div className="max-w-sm w-full bg-white rounded-[32px] overflow-hidden shadow-md text-center">
       {/* Top Image */}
+{image ? (
       <img
         src={image}
         alt={title}
         className="w-full h-64 object-cover rounded-t-[32px]"
       />
-
+) : (
+  <div className="w-full h-64 bg-gray-200 rounded-t-[32px]"></div>
+)}
       {/* Title Bar */}
       <div
         className="py-3 text-white font-semibold text-lg"

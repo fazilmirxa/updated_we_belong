@@ -5,7 +5,7 @@ import BannerSection from './BannerSection';
 const AboutUsSection: React.FC = () => {
   return (
     <>
-    <section className="bg-white py-16 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
+    <section className="mt-20 py-16 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between relative overflow-hidden">
       {/* Left - Text Content */}
       <div className="md:w-1/2 mb-10 md:mb-0">
         <h2 className="text-4xl md:text-5xl font-bold text-[#0e1a4b] mb-4">Who We Are?</h2>
@@ -33,9 +33,8 @@ const AboutUsSection: React.FC = () => {
 
 
     </section>
-    <div className="bg-white">
+
     <BannerSection />
-    </div>
         </>
   );
 };

@@ -3,7 +3,7 @@ import { bookNow } from '../assets';
 
 const BookNowSection: React.FC = () => {
   return (
-    <section className="w-full p-6 bg-white">
+    <section className="w-full p-6 mt-20">
       <div
         className="relative w-full h-[300px] md:h-[300px] mt-[143px] rounded-[30px] overflow-hidden shadow-lg"
         style={{
@@ -23,7 +23,7 @@ const BookNowSection: React.FC = () => {
 
         {/* Button */}
         <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-10">
-          <button className="bg-white text-[#1a1a4b] font-semibold px-6 py-3 rounded-[15px] text-lg shadow hover:bg-gray-100 transition">
+          <button className="text-[#1a1a4b] font-semibold px-6 py-3 rounded-[15px] text-lg shadow hover:bg-gray-100 transition">
             BOOK NOW
           </button>
         </div>
