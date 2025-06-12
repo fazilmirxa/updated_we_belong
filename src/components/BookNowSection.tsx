@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { bookNow } from '../assets';
+import BookNowModal, { type BookingData } from './Modal/BookNowModal';
 
 const BookNowSection: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlePay = (data: BookingData) => {
+    console.log("Booking info to proceed with payment:", data);
+    // Trigger payment integration here (e.g. Razorpay, Stripe)
+  };
+  
   return (
     <section className="w-full p-6 mt-20">
       <div
@@ -23,11 +31,20 @@ const BookNowSection: React.FC = () => {
 
         {/* Button */}
         <div className="absolute right-8 top-1/2 transform -translate-y-1/2 z-10">
-          <button className="text-[#1a1a4b] font-semibold px-6 py-3 rounded-[15px] text-lg shadow hover:bg-gray-100 transition">
+          <button 
+                      onClick={() => setIsModalOpen(true)}
+
+          className="text-[#FFF] font-semibold px-6 py-3 rounded-[15px] text-lg shadow transition">
             BOOK NOW
           </button>
         </div>
       </div>
+       {/* Modal for Booking */}
+       <BookNowModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onPay={handlePay}
+      />
     </section>
   );
 };

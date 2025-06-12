@@ -1,74 +1,61 @@
-import { bg, eventBg } from "../assets";
-import DetailsCard from "../components/DetailsCard";
-const Events = () => {
+import React, { useState } from "react";
+import EventCard from "../components/EventCard";
+import { eventList } from "../data/eventList"; 
+
+
+const tabLabels = ["All", "Ongoing", "Upcoming", "Completed"];
+
+const Events: React.FC = () => {
+  const [activeTab, setActiveTab] = useState("All");
+
+  const filteredEvents =
+    activeTab === "All"
+      ? eventList
+      : eventList.filter((event) => event.status === activeTab);
+
   return (
-    <div className="min-h-screen bg-white py-16 px-4">
-      <div className="max-w-3xl mx-auto text-center mt-10">
-        {/* Title */}
-        <h1 className="text-4xl md:text-5xl font-bold text-[#0B0C3D] mb-10">
-          COORG
-        </h1>
+    <section className="min-h-screen px-6 py-10 bg-gray-50 pt-40">
 
-        {/* Image */}
-        <div className="overflow-hidden">
-          <img
-              src={eventBg}
-            alt="Coorg Festival"
-            className="w-full h-auto rounded-b-[40px] object-cover"
-          />
-        </div>
+      {/* Tabs */}
+      <div className="flex justify-center flex-wrap gap-4 mb-10">
+  {tabLabels.map((tab) => (
+    <button
+      key={tab}
+      onClick={() => setActiveTab(tab)}
+      className={`px-5 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-200 shadow-sm
+        ${
+          activeTab === tab
+            ? "bg-blue-600 text-white shadow-md"
+            : "bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+        }`}
+    >
+      {tab} Event
+    </button>
+  ))}
+</div>
 
-        {/* Event Info + Button */}
-        <div className="mt-8">
-          <p className="text-lg font-bold text-black">October 11–12, 2025</p>
-          <p className="text-lg font-bold text-black mb-4">
-            Capitol Village, Coorg
-          </p>
-          <button className="bg-[#0B0C3D] text-white px-6 py-3 rounded-full text-base font-semibold hover:bg-[#1a1b5c] transition">
-            Book Now
-          </button>
-        </div>
 
-        {/* Paragraphs */}
-        <div className="mt-8 space-y-4 text-gray-700 leading-relaxed text-sm md:text-base">
-          <p>
-            We Belong is a two-day cultural festival set in the lush estates of
-            Coorg, celebrating community, creativity, and culture through music,
-            art, food, and experiences.
+      {/* Event Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+        {filteredEvents.length > 0 ? (
+          filteredEvents.map((event, index) => (
+            <EventCard
+              key={index}
+              image={event.image}
+              title={event.title}
+              date={event.date}
+              location={event.location}
+              description={event.description}
+              status={event.status as "Ongoing" | "Upcoming" | "Completed"}
+            />
+          ))
+        ) : (
+          <p className="text-center col-span-full text-gray-500">
+            No events found for "{activeTab}".
           </p>
-          <p>
-            Nestled in the lush hills of Madikeri, the first edition of We
-            Belong is a celebration of everything Kodagu represents — bold
-            traditions, quiet strength, and music that rises with the mist. Over
-            two immersive days, you all move through performances, rituals,
-            marketplaces and moments that open the senses and settle the
-            spirit.
-          </p>
-        </div>
+        )}
       </div>
-      <div className="max-w-3xl mx-auto text-center mt-10 flex flex-row gap-10">
-      <DetailsCard
-        image={eventBg}
-        title="Art & Craft"
-        items={[
-          "Resin Art",
-          "Pottery (Wheel Throwing)",
-          "Natural Dye & Fabric Art",
-        ]}
-        color="#8B572A" // optional
-      />
-      <DetailsCard
-        image={eventBg}
-        title="Therapeutic Experiences"
-        items={[
-          "Sound Healing",
-          "Breathwork",
-          "Nature Journaling",
-        ]}
-        color="#384E24" // optional
-      />
-      </div>
-    </div>
+    </section>
   );
 };
 

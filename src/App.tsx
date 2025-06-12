@@ -9,6 +9,8 @@ import Contact from './pages/Contact'
 import Footer from './components/Footer'
 import TermsAndConditions from './pages/TermsAndConditions'
 import BannerDetailPage from './pages/BannerDetailsPage'
+import Cities from './pages/Cities'
+import EventDetail from './pages/EventDetails'
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/event/:title" element={<EventDetail />} />
+        <Route path="/cities" element={<Cities />} />
         <Route path="/register" element={<Register />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<AboutUs />} />
