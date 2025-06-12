@@ -1,4 +1,4 @@
-import EventCard from "../components/EventCard";
+import DetailsCard from "../components/DetailsCard";
 import { imageCollageCore, savitha } from "../assets";
 const AboutUs = () => {
   return (
@@ -69,7 +69,7 @@ const AboutUs = () => {
             </div>
             <p className="text-center text-sm text-gray-500 mt-1">Founder & CEO, We Belong</p>
           </div> */}
-          <EventCard
+          <DetailsCard
             image={savitha}
             title="Savitha Carriappa"
             items={["Founder & CEO, We Belong"]}
@@ -94,11 +94,11 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Team Members Section using EventCard */}
+        {/* Team Members Section using DetailsCard */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          <EventCard image="" title="Lorem Ipsum" items={["Co Founder"]} />
-          <EventCard image="" title="Lorem Ipsum" items={["Co Founder"]} />
-          <EventCard image="" title="Lorem Ipsum" items={["Mentor Advisor"]} />
+          <DetailsCard image="" title="Lorem Ipsum" items={["Co Founder"]} />
+          <DetailsCard image="" title="Lorem Ipsum" items={["Co Founder"]} />
+          <DetailsCard image="" title="Lorem Ipsum" items={["Mentor Advisor"]} />
         </div>
       </div>
     </div>

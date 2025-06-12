@@ -1,5 +1,5 @@
 import { bg, eventBg } from "../assets";
-import EventCard from "../components/EventCard";
+import DetailsCard from "../components/DetailsCard";
 const Events = () => {
   return (
     <div className="min-h-screen bg-white py-16 px-4">
@@ -47,7 +47,7 @@ const Events = () => {
         </div>
       </div>
       <div className="max-w-3xl mx-auto text-center mt-10 flex flex-row gap-10">
-      <EventCard
+      <DetailsCard
         image={eventBg}
         title="Art & Craft"
         items={[
@@ -57,7 +57,7 @@ const Events = () => {
         ]}
         color="#8B572A" // optional
       />
-      <EventCard
+      <DetailsCard
         image={eventBg}
         title="Therapeutic Experiences"
         items={[

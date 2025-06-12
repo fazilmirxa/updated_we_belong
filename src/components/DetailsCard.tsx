@@ -1,13 +1,13 @@
 import React from "react";
 
-interface EventCardProps {
+interface DetailsCardProps {
   image: string;
   title: string;
   items: string[];
   color?: string; // optional custom color for the title bar
 }
 
-const EventCard: React.FC<EventCardProps> = ({ image, title, items, color = "#8B572A" }) => {
+const DetailsCard: React.FC<DetailsCardProps> = ({ image, title, items, color = "#8B572A" }) => {
   return (
     <div className="max-w-sm w-full bg-white rounded-[32px] overflow-hidden shadow-md text-center">
       {/* Top Image */}
@@ -42,4 +42,4 @@ const EventCard: React.FC<EventCardProps> = ({ image, title, items, color = "#8B
   );
 };
 
-export default EventCard;
+export default DetailsCard;
