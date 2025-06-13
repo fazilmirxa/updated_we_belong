@@ -8,7 +8,7 @@ import AboutUs from './pages/AboutUs'
 import Contact from './pages/Contact'
 import Footer from './components/Footer'
 import TermsAndConditions from './pages/TermsAndConditions'
-import BannerDetailPage from './pages/BannerDetailsPage'
+import BannerDetail from './pages/BannerDetails'
 import Cities from './pages/Cities'
 import EventDetail from './pages/EventDetails'
 import FloatingWhatsAppButton from './components/FloatingWhatsappButton'
@@ -29,7 +29,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/banners/:slug" element={<BannerDetailPage />} />
+        <Route path="/banners/:slug" element={<BannerDetail />} />
 
       </Routes>
       <FloatingWhatsAppButton />

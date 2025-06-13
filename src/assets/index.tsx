@@ -10,4 +10,5 @@ export { default as imageCollage1 } from "./image-grid1.svg";
 export { default as imageCollageCore } from "./core-collage.svg";
 export { default as eventBg } from "./event.svg";
 export { default as savitha } from "./savitha.svg";
+export { default as aboutUsImg } from "./aboutus.svg";
 
