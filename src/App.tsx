@@ -11,6 +11,7 @@ import TermsAndConditions from './pages/TermsAndConditions'
 import BannerDetailPage from './pages/BannerDetailsPage'
 import Cities from './pages/Cities'
 import EventDetail from './pages/EventDetails'
+import FloatingWhatsAppButton from './components/FloatingWhatsappButton'
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route path="/banners/:slug" element={<BannerDetailPage />} />
 
       </Routes>
+      <FloatingWhatsAppButton />
+
       <Footer />
     </div>
   )
