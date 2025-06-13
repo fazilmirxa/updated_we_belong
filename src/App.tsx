@@ -12,6 +12,7 @@ import BannerDetailPage from './pages/BannerDetailsPage'
 import Cities from './pages/Cities'
 import EventDetail from './pages/EventDetails'
 import FloatingWhatsAppButton from './components/FloatingWhatsappButton'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/banners/:slug" element={<BannerDetailPage />} />
 
       </Routes>

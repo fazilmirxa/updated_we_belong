@@ -1,5 +1,6 @@
 import React from "react";
 import { FaYoutube, FaWhatsapp, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const BottomFooter: React.FC = () => {
   return (
@@ -32,9 +33,14 @@ const BottomFooter: React.FC = () => {
             </a>
           </div>
 
-          <p className="text-sm underline mt-2 cursor-pointer hover:opacity-80">
-            Terms & Conditions
-          </p>
+          <div className="flex gap-4">
+            <Link to="/terms-and-conditions" className="text-white mt-2 cursor-pointer hover:opacity-80 hover:text-red-500">
+              Terms & Conditions
+            </Link>
+            <Link to="/privacy-policy" className="text-white mt-2 cursor-pointer hover:opacity-80 hover:text-red-500">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
