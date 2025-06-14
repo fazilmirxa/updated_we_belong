@@ -1,38 +1,45 @@
-import React from 'react';
-
-import { bg } from '../assets'
+import React from "react";
+import { bg, weBelongHero } from "../assets";
 
 const HeroSection: React.FC = () => {
   return (
     <div className="relative min-h-screen">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url(${bg})`, 
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage: `url(${bg})`,
         }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1C42]/80 via-[#9F1F63]/60 to-[#F15A24]/60"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white px-4">
-        <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
-          Welcome to We Belong
-        </h1>
-        <p className="text-xl md:text-2xl text-center mb-8 max-w-2xl">
-          Empowering communities through connection and shared experiences
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white px-4 text-center">
+        {/* Top Tagline */}
+        <p className="text-sm md:text-base text-white/90 font-light mb-4">
+          Where the land{" "}
+          <span className="font-semibold text-white">sings</span> &amp; the{" "}
+          <span className="font-semibold text-white">soul</span> listens
         </p>
-        <button className="bg-white text-black px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition">
-          Get Started
-        </button>
+
+        {/* Hero Logo Image */}
+        <img
+          src={weBelongHero}
+          alt="We Belong"
+          className="max-w-[770px] w-full mb-6"
+        />
+
+        {/* Subtext */}
+        <p className="text-xl md:text-xl text-white/85 leading-relaxed max-w-2xl">
+          The most awaited gathering in the hills of Kodagu.
+          <br />
+          Rooted in heritage. Alive with sound. Open to all.
+        </p>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
         <svg
           className="w-6 h-6 text-white"
           fill="none"

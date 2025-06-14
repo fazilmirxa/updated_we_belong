@@ -22,10 +22,10 @@ const Events: React.FC = () => {
     <button
       key={tab}
       onClick={() => setActiveTab(tab)}
-      className={`px-5 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-200 shadow-sm
+      className={`px-5 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-200
         ${
           activeTab === tab
-            ? "bg-blue-600 text-white shadow-md"
+            ? "bg-gradient-to-r from-[#0B1C42]/80 via-[#9F1F63]/60 to-[#F15A24]/60 text-white shadow-md"
             : "bg-gray-100 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
         }`}
     >
@@ -33,6 +33,7 @@ const Events: React.FC = () => {
     </button>
   ))}
 </div>
+
 
 
       {/* Event Cards */}
