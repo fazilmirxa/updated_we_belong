@@ -13,3 +13,6 @@ export { default as savitha } from "./savitha.svg";
 export { default as aboutUsImg } from "./aboutus.svg";
 export { default as weBelongHero } from "./we-belong-hero.svg";
 
+export { default as logoCenter } from "./center-logo.svg";
+export { default as guitarImg } from "./guitar.svg";
+export { default as guitarBG } from "./guitar-bg.svg";

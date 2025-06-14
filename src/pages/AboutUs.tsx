@@ -9,7 +9,7 @@ const AboutUs = () => {
   {/* Top Row: Heading + Image */}
   <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
     <h2 className="text-6xl md:text-7xl font-semibold text-black md:w-1/2">
-      our story
+      Our story
     </h2>
     <div >
       <img
@@ -47,7 +47,7 @@ const AboutUs = () => {
 
         {/* Meet the Team Button */}
         <div className="text-center mb-12">
-  <button className="px-10 py-4 border text-3xl font-bold text-[#FFF] rounded-b-[30px] rounded-t-[10px] transition-all ">
+  <button className="px-10 py-4 border text-2xl  text-[#FFF] rounded-b-[30px] rounded-t-[10px] transition-all mt-10 mb-10">
     Meet the Team
   </button>
 </div>

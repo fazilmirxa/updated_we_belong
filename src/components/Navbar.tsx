@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
             <img src={navLogo} alt="We Belong" className="h-10" />
           </div>
 
-          <ul className="hidden lg:flex gap-10 text-lg text-black">
+          <ul className="hidden lg:flex gap-20 text-lg text-black">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (

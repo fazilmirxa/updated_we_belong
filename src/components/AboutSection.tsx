@@ -1,5 +1,5 @@
 import React from 'react';
-import { aboutUs } from '../assets'; // replace with your actual image path
+import { guitarImg, guitarBG } from '../assets'; // replace with your actual image path
 import BannerSection from './BannerSection';
 
 const AboutUsSection: React.FC = () => {
@@ -22,14 +22,31 @@ const AboutUsSection: React.FC = () => {
 
       {/* Right - Image */}
       <div className="flex justify-center">
-        <div >
+  <div className="w-[320px] md:w-[400px] rounded-2xl ">
+    <div className="bg-white rounded-2xl overflow-hidden">
+      {/* Background Image */}
+      <div className="relative w-full h-auto">
+        <img
+          src={guitarBG}
+          alt="Background"
+          className="w-full h-auto object-cover"
+        />
+
+        {/* Guitar image placed inside with margin */}
+        <div className="absolute inset-0 p-3">
           <img
-            src={aboutUs}
-            alt="About Us"
-            className="w-[320px] md:w-[400px] h-auto object-cover rounded-[30px]"
+            src={guitarImg}
+            alt="Guitar"
+            className="w-full h-full object-contain rounded-xl"
           />
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 
     </section>

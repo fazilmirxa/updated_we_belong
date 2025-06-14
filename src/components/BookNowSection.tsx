@@ -11,7 +11,7 @@ const BookNowSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full p-6 mt-20">
+    <section className="w-full p-6 ">
       <div
         className="relative w-full h-[300px] md:h-[300px] mt-[143px] rounded-[30px] overflow-hidden shadow-lg"
         style={{
@@ -24,10 +24,8 @@ const BookNowSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-black/20"></div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col justify-center h-full px-8 md:px-16 text-white">
-          <p className="uppercase tracking-widest text-sm md:text-md mb-1">
-            Chapter 1
-          </p>
+        <div className="relative z-10 flex flex-col justify-center h-full px-8 md:px-10 text-white">
+          <p className="uppercase tracking-widest text-sm md:text-md mb-1">Chapter 1</p>
           <h2 className="text-4xl md:text-5xl font-bold">COORG</h2>
         </div>
 
