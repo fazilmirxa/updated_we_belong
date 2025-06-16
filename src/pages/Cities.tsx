@@ -1,4 +1,4 @@
-import { eventBg } from "../assets";
+import { coorg } from "../assets";
 import DetailsCard from "../components/DetailsCard";
 const Cities = () => {
   return (
@@ -12,7 +12,7 @@ const Cities = () => {
         {/* Image */}
         <div className="overflow-hidden">
           <img
-              src={eventBg}
+              src={coorg}
             alt="Coorg Festival"
             className="w-full h-auto rounded-b-[40px] object-cover"
           />
@@ -48,7 +48,7 @@ const Cities = () => {
       </div>
       <div className="max-w-3xl mx-auto text-center mt-10 flex flex-row gap-10">
       <DetailsCard
-        image={eventBg}
+        image={coorg}
         title="Art & Craft"
         items={[
           "Resin Art",
@@ -58,7 +58,7 @@ const Cities = () => {
         color="#8B572A" // optional
       />
       <DetailsCard
-        image={eventBg}
+        image={coorg}
         title="Therapeutic Experiences"
         items={[
           "Sound Healing",

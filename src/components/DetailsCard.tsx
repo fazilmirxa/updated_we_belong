@@ -7,7 +7,7 @@ interface DetailsCardProps {
   color?: string; // optional custom color for the title bar
 }
 
-const DetailsCard: React.FC<DetailsCardProps> = ({ image, title, items, color = "#8B572A" }) => {
+const DetailsCard: React.FC<DetailsCardProps> = ({ image, title, items, color = "#0B1147" }) => {
   return (
     <div className="max-w-sm w-full bg-white rounded-[32px] overflow-hidden shadow-md text-center">
       {/* Top Image */}
@@ -22,7 +22,7 @@ const DetailsCard: React.FC<DetailsCardProps> = ({ image, title, items, color = 
 )}
       {/* Title Bar */}
       <div
-        className="py-3 text-white font-semibold text-lg"
+        className="py-3 text-white font-semibold text-lg mt-[8px]"
         style={{
           backgroundColor: color,
           borderBottomLeftRadius: "32px",

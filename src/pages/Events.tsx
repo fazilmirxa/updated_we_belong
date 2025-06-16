@@ -17,7 +17,7 @@ const Events: React.FC = () => {
     <section className="min-h-screen px-6 py-10 bg-gray-50 pt-40">
 
       {/* Tabs */}
-      <div className="flex justify-center flex-wrap gap-4 mb-10">
+      <div className="flex justify-center flex-wrap gap-4 mb-10 mt-[-30px]">
   {tabLabels.map((tab) => (
     <button
       key={tab}
@@ -37,7 +37,7 @@ const Events: React.FC = () => {
 
 
       {/* Event Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+      <div className=""> 
         {filteredEvents.length > 0 ? (
           filteredEvents.map((event, index) => (
             <EventCard

@@ -1,43 +1,23 @@
 import GalleryGridOne from "../components/Gallery/GalleryGridOne";
-import GalleryGridTwo from "../components/Gallery/GalleryGridTwo";
+
+import { community1, community2, community3, celebration1, celebration2, celebration3, culture1, culture2, culture3 } from "../assets";
 
 
 const images = [
-  "https://images.unsplash.com/photo-1506459225024-1428097a7e18",
-
-  "https://images.unsplash.com/photo-1506459225024-1428097a7e18",
-  "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
-  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c",
-  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c",
-  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c",
-  "https://images.unsplash.com/photo-1506459225024-1428097a7e18",
-
-  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c",
-  "https://images.unsplash.com/photo-1497515114629-axs", //broken image test
-
+  community1,
+  community2,
+  celebration1,
+  culture1,
+  celebration2,
+  community3,
+  culture3,
+  celebration3,
+  culture2,
+  
 
 
 
-];
 
-const products = [
-  "https://images.unsplash.com/photo-1506459225024-1428097a7e18",
-  "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085",
-  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c",
-  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c",
-  "broken-link", // test
-];
-
-const people = [
-  "https://images.unsplash.com/photo-1506459225024-xgahssasad27",
-  "https://images.unsplash.com/photo-1495474472287-f71d768fd07c",
-  "https://images.unsplash.com/photo-1497515114629-xgahssasad27",
-  "https://images.unsplash.com/photo-1497515114629-xgahssasad27",
-  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c",   
-  "https://images.unsplash.com/photo-1497515114629-xgahssasad27",
-  "https://images.unsplash.com/photo-1497515114629-xgahssasad27",   
-  "https://images.unsplash.com/photo-1497515114629-f71d768fd07c",
-  "https://images.unsplash.com/photo-1497515114629-xgahssasad27",
 ];
 const Gallery = () => {
   return (
@@ -57,21 +37,10 @@ const Gallery = () => {
         {/* Gallery Grid */}
         <GalleryGridOne images={images} />
 
-        {/* Title 2 */}
-        <div className="text-center mb-12 mt-20">
-          <h2 className="text-4xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Products
-          </h2>
-        </div>
-        <GalleryGridTwo images={products} />
+        
 
-
-        <div className="text-center mb-12 mt-20">
-          <h2 className="text-4xl sm:text-4xl font-bold text-gray-900 mb-4">
-            People
-          </h2>
-        </div>
-        <GalleryGridOne images={people} />
+        
+        
       </div>
     </div>
   );

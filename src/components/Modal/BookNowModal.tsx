@@ -112,7 +112,7 @@ const BookNowModal: React.FC<BookNowModalProps> = ({ isOpen, onClose, onPay }) =
             type="submit"
             className="w-full bg-[#0c125f] text-white text-lg font-semibold py-3 rounded-xl hover:bg-[#0a104b] transition"
           >
-            Pay
+            Continue
           </button>
         </form>
       </div>

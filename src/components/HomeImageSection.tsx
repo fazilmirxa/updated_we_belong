@@ -1,10 +1,10 @@
 import ImageCollage from "./ImageCollage";
-import { imageCollage1, bannerDetailImg, imageCollageCore } from '../assets';
+import { homeCollage1, homeCollage2, homeCollage3, homeCollage4, homeCollage5, homeCollage6, homeCollage7, homeCollage8, homeCollage9 } from '../assets';
 
 const HomeImageSection = () => {
     return (
         <div className="py-12">
-            <ImageCollage images={[imageCollage1, bannerDetailImg, imageCollage1, bannerDetailImg, imageCollageCore, bannerDetailImg, imageCollage1, bannerDetailImg, imageCollage1]} />
+            <ImageCollage images={[homeCollage1, homeCollage2, homeCollage3, homeCollage4, homeCollage5, homeCollage6, homeCollage7, homeCollage8, homeCollage9]} />
         </div>
     )
 }

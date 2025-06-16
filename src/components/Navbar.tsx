@@ -64,7 +64,8 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:block">
             <Link
               to="/contact"
-              className="bg-black text-white px-5 py-2 rounded-bl-[10px] rounded-br-[10px] font-semibold hover:bg-gray-800 transition"
+              className="border-[#0B1147] border-[1px] text-[#0B1147] px-5 py-2 rounded-t-none rounded-bl-[20px] rounded-br-[20px] font-semibold transition duration-300 ease-in-out hover:bg-[#0B1147] hover:text-white 
+"
             >
               Contact Us
             </Link>
@@ -133,13 +134,15 @@ const Navbar: React.FC = () => {
           </ul>
 
           <div className="mt-auto">
-            <Link
-              to="/contact"
-              onClick={closeDrawer}
-              className="block w-full bg-black text-white text-center py-3 rounded-xl font-semibold hover:bg-gray-800 transition"
-            >
-              Contact Us
-            </Link>
+          <Link
+  to="/contact"
+  onClick={closeDrawer}
+  className="block w-full !bg-[#0B1147] text-white text-center py-3 rounded-t-none rounded-bl-[30px] rounded-br-[30px] font-semibold transition duration-300 ease-in-out hover:!bg-white hover:!text-[#0B1147] hover:shadow-xl hover:border-2 hover:border-[#0B1147]"
+>
+  Contact Us
+</Link>
+
+
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { bannerDetailImg } from "../assets";
+import { community1, community2, community3, celebration1, celebration2, celebration3, culture1, culture2, culture3 } from "../assets";
 import ImageWithPlaceholder from "../components/ImageWithPlaceholder";
 
 const contentMap: Record<
@@ -11,16 +11,16 @@ const contentMap: Record<
     title: "Community",
     description:
       "From homegrown artisans to local food heroes, from indie labels to regional favourites, We Belong brings together a handpicked community. Wander through vibrant flea markets, taste traditional recipes, and sip drinks crafted for great conversations.",
-    images: [bannerDetailImg, bannerDetailImg, bannerDetailImg],
+    images: [community1, community2, community3],
   },
   culture: {
     title: "Culture",
     description:
       "We Belong celebrates the regal traditions of Kodagu, starting with immersive heritage walks that bring the Coorg culture to life. From Kodava dance forms to folk performances and storytelling corners, each moment lets you feel the soul of Coorg.",
     images: [
-      "/assets/culture1.jpg",
-      "/assets/culture2.jpg",
-      "/assets/culture3.jpg",
+      culture1,
+      culture2,
+      culture3,
     ],
   },
   celebration: {
@@ -28,9 +28,9 @@ const contentMap: Record<
     description:
       "Music fills the hills as day turns to dusk. From sunset sets to late-night rhythms, our artist lineup is designed to move you.\nGet ready to groove to Indo Tech, Vachan Chinnappa, DJ Aria, Nikhil Chinappa, Ivan, Nikon and more.",
     images: [
-      "/assets/celebration1.jpg",
-      "/assets/celebration2.jpg",
-      "/assets/celebration3.jpg",
+      celebration1,
+      celebration2,
+      celebration3,
     ],
   },
 };

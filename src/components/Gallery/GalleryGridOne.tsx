@@ -5,13 +5,13 @@ type GalleryProps = {
 };
 
 const getRandomHeight = () => {
-  const heights = ["h-40", "h-52", "h-64", "h-72", "h-80"];
+  const heights = ["h-40", "h-60", "h-64", "h-72", "h-80"];
   return heights[Math.floor(Math.random() * heights.length)];
 };
 
 const GalleryGridOne = ({ images }: GalleryProps) => {
   return (
-    <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4 px-4">
+    <div className="columns-1 sm:columns-2 md:columns-2 gap-4 space-y-4 px-4">
       {images.map((img, index) => {
         const heightClass = getRandomHeight();
         const [hasError, setHasError] = useState(false);
@@ -33,7 +33,7 @@ const GalleryGridOne = ({ images }: GalleryProps) => {
             )}
           </div>
         );
-      })}
+      })}zz
     </div>
   );
 };

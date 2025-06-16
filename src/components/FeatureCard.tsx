@@ -21,9 +21,9 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, slu
     </div>
     <button
       onClick={() => navigate(`/banners/${slug}`)}
-      className="w-10 h-10 border rounded-full flex items-center justify-center bg-black text-white hover:bg-black hover:text-white transition"
+      className="w-10 h-10 border border-black rounded-full flex items-center justify-center  text-black bg-transparent"
     >
-      →
+      &gt;
     </button>
   </div>
   </Link>

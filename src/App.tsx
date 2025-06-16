@@ -16,7 +16,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 
 function App() {
   return (
-    <div className="min-h-screen w-full">
+    <div className="min-h-screen w-full ">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
