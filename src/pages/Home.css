@@ -1,0 +1,25 @@
+@keyframes smoothGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.smooth-gradient-bg {
+  background: radial-gradient(
+    circle at top left,
+    rgba(236, 107, 60, 0.1),
+    rgba(243, 112, 33, 0.1),
+    rgba(170, 35, 84, 0.1),
+    rgba(62, 75, 211, 0.1),
+    rgba(0, 168, 107, 0.1),
+    rgba(212, 215, 0, 0.1)
+  );
+  background-size: 400% 400%;
+  animation: smoothGradient 18s ease infinite;
+}

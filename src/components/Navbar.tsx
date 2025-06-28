@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { navLogo } from "../assets";
 import { useScrollDirection } from "../hooks/useScrollDirection";
 import { FiMenu, FiX } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 const Navbar: React.FC = () => {
   const scrollDirection = useScrollDirection();
@@ -36,27 +37,41 @@ const Navbar: React.FC = () => {
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <nav className="mx-6 sm:mx-12 mt-4 bg-white flex items-center justify-between px-6 sm:px-8 py-4 rounded-bl-[30px] rounded-br-[30px] shadow-md">
-          <div>
-            <img src={navLogo} alt="We Belong" className="h-10" />
-          </div>
+        <nav
+          className="mx-6 sm:mx-12 mt-4 flex items-center justify-between px-6 sm:px-8 py-4 shadow-md rounded-[15px] bg-white"
+       
+        >
+         <div>
+  <Link to="/">
+    <img src={navLogo} alt="We Belong" className="h-10 cursor-pointer" />
+  </Link>
+</div>
 
-          <ul className="hidden lg:flex gap-20 text-lg text-black">
+          <ul className="hidden lg:flex gap-20 text-lg">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
-                <li key={item.path}>
+                <motion.div
+                  key={item.path}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="group relative"
+                >
                   <Link
                     to={item.path}
-                    className={`transition-all duration-200 pb-1 pt-1 ${
-                      isActive
-                        ? "border-t-2 border-b-2 border-black"
-                        : "hover:opacity-70"
-                    }`}
+                    className="relative inline-block text-[#0e1a4b] font-medium"
                   >
                     {item.label}
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-underline"
+                        className="absolute left-0 right-0 h-[2px] bg-[#0e1a4b] bottom-0 rounded-full"
+                        transition={{ duration: 0.4 }}
+                      />
+                    )}
+                    <span className="absolute left-0 bottom-0 h-[2px] bg-[#0e1a4b] w-0 group-hover:w-full transition-all duration-300 ease-in-out"></span>
                   </Link>
-                </li>
+                </motion.div>
               );
             })}
           </ul>
@@ -64,8 +79,7 @@ const Navbar: React.FC = () => {
           <div className="hidden lg:block">
             <Link
               to="/contact"
-              className="border-[#0B1147] border-[1px] text-[#0B1147] px-5 py-2 rounded-t-none rounded-bl-[20px] rounded-br-[20px] font-semibold transition duration-300 ease-in-out hover:bg-[#0B1147] hover:text-white 
-"
+              className="border-[#0B1147] border-[1px] text-[#0B1147] px-5 py-2 rounded-[8px] font-semibold transition duration-300 ease-in-out hover:bg-[#0B1147] hover:text-white"
             >
               Contact Us
             </Link>
@@ -112,37 +126,39 @@ const Navbar: React.FC = () => {
             </button>
           </div>
 
-          <ul className="flex flex-col gap-4 text-lg font-medium text-black mt-6">
+          <ul className="flex flex-col gap-4 text-lg font-medium text-black mt-6 text-center">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
-                <li key={item.path}>
+                <motion.div
+                  key={item.path}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <Link
                     to={item.path}
                     onClick={closeDrawer}
                     className={`block ${
                       isActive
-                        ? "font-semibold border-b-2 border-black pb-1"
-                        : "hover:opacity-70"
+                        ? "font-semibold border-b-2 border-[#0e1a4b] pb-1 text-[#0e1a4b]"
+                        : "hover:opacity-80"
                     }`}
                   >
                     {item.label}
                   </Link>
-                </li>
+                </motion.div>
               );
             })}
           </ul>
 
           <div className="mt-auto">
-          <Link
-  to="/contact"
-  onClick={closeDrawer}
-  className="block w-full !bg-[#0B1147] text-white text-center py-3 rounded-t-none rounded-bl-[30px] rounded-br-[30px] font-semibold transition duration-300 ease-in-out hover:!bg-white hover:!text-[#0B1147] hover:shadow-xl hover:border-2 hover:border-[#0B1147]"
->
-  Contact Us
-</Link>
-
-
+            <Link
+              to="/contact"
+              onClick={closeDrawer}
+              className="block w-full !bg-[#0B1147] text-white text-center py-3 rounded-[10px] font-semibold transition duration-300 ease-in-out hover:!bg-white hover:!text-[#0B1147] hover:shadow-xl hover:border-2 hover:border-[#0B1147]"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
       </div>

@@ -1,44 +1,46 @@
 import React from "react";
-import { bg, weBelongHero } from "../assets";
+import { motion } from "framer-motion";
+import { CenterImage } from "../assets";
 
 const HeroSection: React.FC = () => {
   return (
-    <div className="relative min-h-screen">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${bg})`,
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1C42]/80 via-[#9F1F63]/60 to-[#F15A24]/60"></div>
-      </div>
-
+    <div className="relative min-h-screen overflow-hidden">
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-white px-4 text-center">
+      <motion.div
+        className="relative z-10 flex flex-col items-center justify-center min-h-screen text-black px-4 text-center"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
         {/* Top Tagline */}
-        <p className="text-sm md:text-base text-white/90 font-light mb-10">
+        <motion.p
+          className="text-base md:text-xl text-black/90 font-light mb-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 1 }}
+        >
           Where the land{" "}
-          <span className="font-semibold text-white">sings</span> &amp; the{" "}
-          <span className="font-semibold text-white">soul</span> listens
-        </p>
+          <span className="font-semibold text-black">sings</span> &amp; the{" "}
+          <span className="font-semibold text-black">soul</span> listens
+        </motion.p>
 
-        {/* Hero Logo Image */}
-        <img
-          src={weBelongHero}
-          alt="We Belong"
+        {/* Hero Video Animation */}
+        <motion.img
+          src={CenterImage}
+          alt="Hero"
           className="max-w-[770px] w-full mb-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 1 }}
         />
-
-       
-      </div>
+      </motion.div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
         <svg
-          className="w-6 h-6 text-white"
+          className="w-6 h-6 text-black"
           fill="none"
-          strokeLinecap="round"
+          strokeLinecap="round" 
           strokeLinejoin="round"
           strokeWidth="2"
           viewBox="0 0 24 24"

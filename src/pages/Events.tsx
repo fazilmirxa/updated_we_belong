@@ -14,7 +14,7 @@ const Events: React.FC = () => {
       : eventList.filter((event) => event.status === activeTab);
 
   return (
-    <section className="min-h-screen px-6 py-10 bg-gray-50 pt-40">
+    <section className="min-h-screen px-6 py-10  pt-40">
 
       {/* Tabs */}
       <div className="flex justify-center flex-wrap gap-4 mb-10 mt-[-30px]">

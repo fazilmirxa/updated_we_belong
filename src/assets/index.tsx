@@ -1,7 +1,6 @@
 export { default as bg } from "./bg.svg";
 export { default as navLogo } from "./nav-logo.svg";
 export { default as bookNow } from "./booknow-bg.svg";
-export { default as aboutUs } from "./about-bg.svg";
 export { default as whoWeAre } from "./who-we-are.svg";
 export { default as iconCommunity } from "./icon-community.svg";
 export { default as footerBg } from "./footer-bg.svg";
@@ -10,8 +9,7 @@ export { default as imageCollage1 } from "./image-grid1.svg";
 export { default as imageCollageCore } from "./core-collage.svg";
 export { default as eventBg } from "./event.svg";
 export { default as savitha } from "./savitha.svg";
-export { default as aboutUsImg } from "./aboutus.svg";
-export { default as weBelongHero } from "./we-belong-hero.svg";
+export { default as aboutUsImg } from "./about-us.jpg";
 export { default as coorg } from "./coorg.png";
 export { default as logoCenter } from "./center-logo.svg";
 export { default as guitarImg } from "./guitar.svg";
@@ -36,3 +34,8 @@ export { default as celebration2 } from "./CCC Images/celebration-2.png";
 export { default as celebration3 } from "./CCC Images/celebration-3.png";
 export { default as workshop1 } from "./workshop1.png";
 export { default as workshop2 } from "./workshop2.png";
+export { default as goal1 } from "./goal1.png";
+export { default as goal2 } from "./goal2.png";
+export { default as slotImg } from "./slot-image.png"
+export {default as bookNOW} from "./book-now-image.png"
+export {default as CenterImage} from "./center-image.svg"

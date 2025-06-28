@@ -13,11 +13,16 @@ import Cities from './pages/Cities'
 import EventDetail from './pages/EventDetails'
 import FloatingWhatsAppButton from './components/FloatingWhatsappButton'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import StartTop from "./hooks/StartTop"
 
 function App() {
+
+  
+
   return (
     <div className="min-h-screen w-full ">
       <Navbar />
+      <StartTop/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />

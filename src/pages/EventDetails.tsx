@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import EventCard from "../components/EventCard";
 import { eventList } from "../data/eventList";
-import ImageWithPlaceholder from "../components/ImageWithPlaceholder";
+import { FaTicketAlt } from "react-icons/fa";
 import BookNowModal, { type BookingData } from "../components/Modal/BookNowModal";
 import { coorg, workshop1, workshop2 } from "../assets";
-import DetailsCard from "../components/DetailsCard";
+import { motion } from "framer-motion";
+import FleaMarket from "../components/FleaMarket";
+import EventRegion from "../components/EventRegion";
+import ExperienceZone from "../components/ExperienceZone";
+import MusicLineup from "../components/MusicLineup";
 
 const EventDetail: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handlePay = (data: BookingData) => {
     console.log("Booking info to proceed with payment:", data);
-    // Trigger payment integration here
   };
 
   const { title } = useParams<{ title: string }>();
   const decodedTitle = decodeURIComponent(title || "");
-
   const event = eventList.find((e) => e.title === decodedTitle);
 
   if (!event) {
@@ -28,105 +29,123 @@ const EventDetail: React.FC = () => {
     );
   }
 
- 
-
   return (
-    <div className="min-h-screen bg-white py-16 px-4 mt-[70px]">
-      {/* Main Section - Image Left, Details Right */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-12">
-        {/* Image */}
-        <div className="w-full md:w-1/2  ">
-          <ImageWithPlaceholder
-            src={coorg}
-            alt={event.title}
-            className="w-full h-auto rounded-t-none rounded-b-[50px] shadow-xl object-cover"
-
-          />
-        </div>
-
-       {/* Details */}
-<div className="w-full md:w-1/2 flex items-center">
-  <div className="text-center md:text-left space-y-10 flex flex-col justify-center w-full">
-    <h1 className="text-4xl md:text-5xl font-bold text-[#0B0C3D]">
-      {event.title}
-    </h1>
-
-    <div className="text-lg font-semibold text-gray-800">
-      <p>{event.date}</p>
-      <p>{event.location}</p>
-    </div>
-
-    <button
-      onClick={() => setIsModalOpen(true)}
-      className="bg-[#0B1147] text-white px-8 py-4 rounded-t-none rounded-b-[30px] text-lg font-bold shadow-lg hover:shadow-xl transition"
+    <div
+      className="min-h-screen bg-white py-16 px-4"
+      style={{
+        background:
+          "radial-gradient(circle at top left, rgba(236, 107, 60, 0.1), rgba(243, 112, 33, 0.1), rgba(170, 35, 84, 0.1), rgba(62, 75, 211, 0.1), rgba(0, 168, 107, 0.1), rgba(212, 215, 0, 0.1))",
+        backgroundSize: "400% 400%",
+        animation: "smoothGradient 18s ease infinite",
+      }}
     >
-      Book Now
-    </button>
+      {/* Hero Section */}
+      <motion.div
+        className="max-w-4xl mx-auto px-4 py-8 text-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          className="w-full relative pb-[56.25%] mb-6 mt-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <img
+            src={coorg}
+            alt="Coorg Fest 2025"
+            className="absolute inset-0 w-full h-full object-cover rounded-lg shadow"
+          />
+        </motion.div>
 
-    <div className="text-gray-700 text-base md:text-lg space-y-3">
-      <p>{event.description}</p>
-      <p>
-        This event is a wonderful opportunity to connect, learn, and grow in a vibrant environment. Don’t miss out on this experience of a lifetime!
-      </p>
-    </div>
-  </div>
-</div>
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="inline-flex items-center justify-center gap-4 w-[300px] h-[60px] text-[#0e1a4b] bg-white border border-[#0e1a4b] font-semibold rounded-[18px] hover:bg-[#0e1a4b] hover:text-white transition-all duration-300 mb-6 text-lg"
+        >
+          <FaTicketAlt />
+          Book Your Spot
+        </button>
 
+        <p className="text-base text-gray-700 leading-relaxed text-justify sm:text-center">
+          A celebration of tech innovation featuring top speakers, workshops, and networking.
+          <br />
+          This event is a wonderful opportunity to connect, learn, and grow in a vibrant environment.
+          Don’t miss out on this experience of a lifetime!
+        </p>
+      </motion.div>
+
+      {/* Curated Workshop Section */}
+      <div className="mt-16 px-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0e1a4b] mb-10">
+          With Curated Workshop
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 w-full max-w-5xl mx-auto justify-items-center">
+          {/* CARD 1 */}
+          <div className="w-full max-w-sm rounded-2xl shadow-lg bg-white overflow-hidden">
+            <div className="relative group">
+              <img
+                src={workshop1}
+                alt="Art & Craft"
+                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
+                <ul className="text-sm text-gray-700 text-center space-y-1 bg-white p-5 rounded-[12px]">
+                  <li>• Resin Art</li>
+                  <li>• Pottery (Wheel Throwing)</li>
+                  <li>• Natural Dye & Fabric Art</li>
+                </ul>
+              </div>
+            </div>
+            <div className="p-4">
+              <h3 className="text-xl font-bold text-[#0e1a4b] text-center">Art & Craft</h3>
+            </div>
+          </div>
+
+          {/* CARD 2 */}
+          <div className="w-full max-w-sm rounded-2xl shadow-lg bg-white overflow-hidden">
+            <div className="relative group">
+              <img
+                src={workshop2}
+                alt="Therapeutic Experiences"
+                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
+                <ul className="text-sm text-gray-700 text-center space-y-1 bg-white p-5 rounded-[12px]">
+                  <li>• Sound Healing</li>
+                  <li>• Breathwork</li>
+                  <li>• Nature Journaling</li>
+                </ul>
+              </div>
+            </div>
+            <div className="p-4">
+              <h3 className="text-xl font-bold text-[#0e1a4b] text-center">Therapeutic Experiences</h3>
+            </div>
+          </div>
+        </div>
       </div>
 
-      
+      {/* Flea Market */}
+      <div className="mt-16">
+        <FleaMarket />
+      </div>
 
-     {/* Workshop Section */}
-<div className="mt-20 mb-6 px-4 text-center">
-<h1
-  className="mx-auto px-6 md:px-10 py-4 border border-[#0B1147] text-2xl md:text-3xl text-[#0B1147] rounded-b-[30px] mt-10 mb-10 w-[90%] sm:w-[80%] md:w-[500px] text-center"
->
-  With Curated Workshop
-</h1>
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 w-full max-w-5xl mx-auto justify-items-center">
-    <DetailsCard
-      image={workshop1}
-      title="Art & Craft"
-      items={["• Resin Art", "• Pottery (Wheel Throwing)", "• Natural Dye & Fabric Art"
-      ]
-        
-      }
-    />
-    <DetailsCard
-      image={workshop2}
-      title="Therapeutic Experiences"
-      items={["• Sound Healing", "• Breathwork", "• Nature Journaling"]}
-    />
-  </div>
-</div>
-     {/* Music Section */}
-<div className="mt-20 mb-6 px-4 text-center">
-<h1
-  className="mx-auto px-6 md:px-10 py-4 border border-[#0B1147] text-2xl md:text-3xl text-[#0B1147] rounded-b-[30px] mt-10 mb-10 w-[90%] sm:w-[80%] md:w-[500px] text-center"
->
-  End with MUSIC LINEUP
-</h1>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 w-full max-w-5xl mx-auto justify-items-center">
-    <DetailsCard
-      image={"https://www.thechristianbeat.org/wp-content/uploads/2023/02/NF2023-e1676577588380-1024x691.jpg"}
-      title="NF"
-      items={["Introspective rap style"]
-        
-      }
-    />
-    <DetailsCard
-      image={"https://www.thestatesman.com/wp-content/uploads/2025/04/arijit-singh-pahalgam-attack-jpg.webp"}
-      title="Arijit Singh"
-      items={["Soulful and romantic voice"]}
-    />
-    <DetailsCard
-      image={"https://www.hindustantimes.com/ht-img/img/2025/06/12/1600x900/justin_bieber_facial_paralysis_1654929851122_1749733690281.jpg"}
-      title="Justin"
-      items={["Canadian singer and songwriter"]}
-    />
-  </div>
-</div>
+      {/* Event Region */}
+      <div className="mt-12">
+        <EventRegion />
+      </div>
 
+      {/* Experience Zone */}
+      <div className="mt-12">
+        <ExperienceZone />
+      </div>
+
+      <MusicLineup/>
 
       {/* Booking Modal */}
       <BookNowModal
@@ -134,6 +153,17 @@ const EventDetail: React.FC = () => {
         onClose={() => setIsModalOpen(false)}
         onPay={handlePay}
       />
+
+      {/* Gradient Animation Keyframes */}
+      <style>
+        {`
+          @keyframes smoothGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; } 
+            100% { background-position: 0% 50%; }
+          }
+        `}
+      </style>
     </div>
   );
 };

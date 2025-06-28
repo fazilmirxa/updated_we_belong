@@ -1,8 +1,8 @@
 export const eventList = [
     {
-      image: "src/assets/coorg.png",
+      image: "src/assets/slot-image.png",
       title: "Coorg",
-      date: "October 11–12, 2025",
+      date: "October 11-12 2025",
       location: "Capitol Village, Coorg",
       description:
         "A celebration of tech innovation featuring top speakers, workshops, and networking.",

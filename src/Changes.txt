@@ -8,3 +8,8 @@ Gradient property:
         rgba(0, 168, 107, 0.1),    /* #00a86b with 10% opacity */
         rgba(212, 215, 0, 0.1)      /* #d4d700 with 10% opacity */
  );
+
+Nav border 15px
+Contact border 8px nd 10px for mobile
+
+linear-gradient(to right, rgba(236, 107, 60, 0.2), rgba(243, 112, 33, 0.2), rgba(170, 35, 84, 0.2), rgba(62, 75, 211, 0.2), rgba(0, 168, 107, 0.2), rgba(212, 215, 0, 0.2))

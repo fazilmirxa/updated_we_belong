@@ -1,27 +1,14 @@
-import GalleryGridOne from "../components/Gallery/GalleryGridOne";
+import GalleryPage from "../components/Gallery/GalleryPage";
 
-import { community1, community2, community3, celebration1, celebration2, celebration3, culture1, culture2, culture3 } from "../assets";
-
-
-const images = [
-  community1,
-  community2,
-  celebration1,
-  culture1,
-  celebration2,
-  community3,
-  culture3,
-  celebration3,
-  culture2,
-  
-
-
-
-
-];
 const Gallery = () => {
   return (
-    <div className="bg-white min-h-screen pt-20">
+    <div className="bg-white min-h-screen pt-20"
+    style={{
+      background:
+        "radial-gradient(circle at top left, rgba(236, 107, 60, 0.1), rgba(243, 112, 33, 0.1), rgba(170, 35, 84, 0.1), rgba(62, 75, 211, 0.1), rgba(0, 168, 107, 0.1), rgba(212, 215, 0, 0.1))",
+      backgroundSize: "400% 400%",
+      animation: "smoothGradient 18s ease infinite",
+    }}>
       <div className="px-4 sm:px-10 py-10 max-w-7xl mx-auto">
         {/* Title & Description */}
         <div className="text-center mb-12">
@@ -35,13 +22,22 @@ const Gallery = () => {
         </div>
 
         {/* Gallery Grid */}
-        <GalleryGridOne images={images} />
+        <GalleryPage/>
 
         
 
         
         
       </div>
+      <style>
+        {`
+          @keyframes smoothGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; } 
+            100% { background-position: 0% 50%; }
+          }
+        `}
+      </style>
     </div>
   );
 };
